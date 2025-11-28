@@ -1,0 +1,156 @@
+/* Hero Section */
+.hero-section {
+  padding: 4rem 1rem;
+  background-color: #f9c7ade3;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media(min-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Hero Image */
+.hero-image-wrapper {
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  height: 28rem;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.discount-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #0c4a13; /* red-500 */
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+/* Hero Text */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-kicker {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #d97706; /* amber-600 */
+  font-size: 0.875rem;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827; /* gray-900 */
+  margin-top: 0.5rem;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #ffffff; /* gray-600 */
+  margin-top: 1rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Price & Availability */
+.hero-price-availability {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.availability {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.availability.in-stock {
+  color: #042a12;
+  background-color: #dcfce7;
+}
+
+.availability.low-stock {
+  color: #b45309;
+  background-color: #fef3c7;
+}
+
+.availability.out-of-stock {
+  color: #b91c1c;
+  background-color: #fee2e2;
+}
+
+.availability.unknown {
+  color: #374151;
+  background-color: #f3f4f6;
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  font-weight: 600;
+  border-radius: 0.75rem;
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: none;
+}
+
+.btn.primary {
+  background-color: #da7b07; /* amber-600 */
+  color: white;
+}
+
+.btn.primary:hover {
+  background-color: #b45309; /* amber-700 */
+}
+
+.btn.secondary {
+  background-color: white;
+  color: #111827;
+  border: 2px solid #d1d5db; /* gray-300 */
+}
+
+.btn.secondary:hover {
+  background-color: #f3f4f6; /* gray-50 */
+}

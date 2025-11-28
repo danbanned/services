@@ -1,0 +1,132 @@
+.ingredient-origins {
+  padding: 4rem 1rem;
+  background-color: #f2debe;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #1a1a1a;
+}
+
+.ingredient-origins .title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #0f2340;
+}
+
+.ingredient-origins .subtitle {
+  text-align: center;
+  font-size: 1.125rem;
+  color: #555;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ingredient-origins .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* House-Shaped Card */
+/* House-Shaped Card using clip-path */
+.ingredient-origins .card {
+  background: rgba(212, 197, 197, 0.288);
+  padding: 2rem 1.5rem;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  /* House Shape */
+  clip-path: polygon(
+    40% 0%,      /* top peak of roof */
+    100% 10%,    /* top right of roof */
+    100% 100%,   /* bottom right */
+    7% 100%,     /* bottom left */
+    0% 5%       /* top left of roof */
+  );
+}
+
+/* Roof Triangle */
+.ingredient-origins .card::before {
+  content: '';
+  position: absolute;
+  top: -20px; /* adjust roof height */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 20px solid rgba(212, 197, 197, 0.288); /* same as card background */
+}
+
+/* Hover Effect */
+.ingredient-origins .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+/* Red Card Accent */
+.ingredient-origins .card.red {
+  border-left: 4px solid #dc2626;
+}
+
+/* Icons & Text */
+.ingredient-origins .icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #d97706; /* amber accent */
+}
+
+.ingredient-origins .heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #0f2340;
+}
+
+.ingredient-origins .text {
+  font-size: 1rem;
+  color: #4a4a4a;
+  line-height: 1.6;
+}
+
+.ingredient-origins .small-label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  color: #0f2340;
+}
+
+/* Lists */
+.ingredient-origins .cards ul {
+  padding-left: 1rem;
+}
+
+.ingredient-origins .cards li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ingredient-origins .check {
+  color: #16a34a;
+}
+
+.ingredient-origins .star {
+  color: #f59e0b;
+}
+
+/* Trust Badge */
+.ingredient-origins .trust-badge {
+  text-align: center;
+  margin-top: 2rem;
+  font-weight: 600;
+  color: #0f2340;
+}

@@ -1,239 +1,281 @@
 
-Service Page: "Schedule & Purchase Product"
+---
 
-Purpose:
-- Allow users to schedule when they want to buy a product
-- Show product availability
-- Optional: enable purchase/reservation and notifications
-*/
+## **Core Service Page Features**
 
-// FEATURES
+* **Product & Herb Showcase**: Display herbs with detailed pages (ingredients, uses, origin, benefits, process insights).
+* **Process / Behind-the-Scenes**: Step-by-step visualization of sourcing, cleaning, drying, and packaging.
+* **Scheduling Section**: Pre-scheduling for purchases, delivery, or reservations with automated reminders.
+* **Purchase & Reservation Section**: Secure checkout, cart, reservations, and special blend orders.
+* **Reviews & Ratings Section**: Users can post text, ratings, and images. Sorting and filtering supported.
+* **Personalization / Feed**: Recommendations based on past purchases, preferences, or wellness goals.
+* **Notifications & Alerts**: Push/email notifications for orders, promotions, or restocked products.
+* **Refunds & Returns**: Clear policy and guided refund process.
+* **Insights / Educational Content**: Ingredient benefits, usage guides, and allergy information.
+* **Technical Notes**: Built with Next.js, responsive design, and smooth animations.
 
-// 1️⃣ Scheduling & Availability Features (IMPORTANT!!!)
-/*
-- Calendar picker: users select exact dates and time slots
-- Time-based availability: show when product is in stock or back in stock
-- Delivery/Pickup options: choose shipping, pickup, or delivery time
-- Automated reminders: email/SMS/notifications before scheduled purchase or delivery
-*/
+---
 
-// 2️⃣ Product Information & Personalization (IMPORTANT!!!)
-/*
-- Real-time stock updates: visually indicate "low stock" or "out of stock"
-- Product details: images, description, price, specs
-- Alternative suggestions: show similar products if unavailable
-- User preferences: remember previous selections for faster scheduling
-*/
+## **Potential Bugs & Preventive Measures**
 
-// 3️⃣ Booking / Purchase Flow (EXTRA??)
-/*
-- Add-to-cart or reservation: allow users to reserve before checkout
-- Confirmations: show booking confirmation, allow reschedule/cancel
-- Payment options: prepay, pay-on-delivery, or integrate payment gateways
-*/
+| Feature Area                  | Potential Bug / Error                          | Cause                                          | Prevention / Mitigation                                                          |
+| ----------------------------- | ---------------------------------------------- | ---------------------------------------------- | -------------------------------------------------------------------------------- |
+| Product & Inventory           | Wrong stock levels or product info             | Database desync, outdated CMS data             | Real-time inventory tracking, validate data, automated tests                     |
+|                               | Missing ingredient or process info             | Incomplete data entry                          | Structured content storage, required fields, fallbacks                           |
+| Scheduling & Reservations     | Double-booking or slot unavailable             | No transactional locking                       | Lock slots temporarily during checkout, UTC date storage, server-side validation |
+|                               | Timezone mismatches                            | Local vs server time mismatch                  | Convert all times to UTC internally, display in user timezone                    |
+|                               | Notification failure                           | Messaging queue or trigger errors              | Use reliable queues, test notifications, deduplicate messages                    |
+| Purchase & Payments           | Failed or duplicate transactions               | Payment gateway errors, client-side issues     | Server-side validation, transaction logs, idempotent endpoints                   |
+|                               | Refunds not processed                          | Backend logic issues                           | Test refund flow, maintain clear transaction records                             |
+| Reviews & Ratings             | Spam or inappropriate content                  | Lack of moderation                             | Validate content, moderation tools, manual review for new users                  |
+|                               | Image upload fails                             | Invalid file type or size                      | File validation, size limits, proper error messaging                             |
+|                               | Sorting/filtering broken                       | Logic errors                                   | Automated tests for review display, sort, and filter                             |
+| Ingredient & Process Insights | Incorrect or missing info                      | Data entry errors                              | Structured storage, fallback values, UI testing with varied content              |
+|                               | UI breaks with long text or special characters | Improper text handling                         | Text sanitization, responsive UI, overflow handling                              |
+| Notifications & Alerts        | Users not receiving notifications              | Queue failures, email/push misconfiguration    | Message queue system, deduplication, test templates                              |
+|                               | Multiple notifications sent                    | Triggered multiple times                       | Deduplicate on server, proper event tracking                                     |
+| Personalization & Feed        | Wrong recommendations shown                    | Algorithm errors or outdated user data         | Cache carefully, refresh feeds on user actions, fallback defaults                |
+|                               | Feed not updating                              | Frontend state not synced                      | Real-time updates, proper API integration                                        |
+| Technical & Performance       | Slow page load                                 | Heavy images, unoptimized assets               | Image optimization, lazy loading, code splitting                                 |
+|                               | Memory leaks / crashes                         | Repeated API calls, improper component cleanup | React profiling, cleanup effects/hooks, performance testing                      |
+|                               | Browser/device compatibility issues            | Lack of testing on multiple platforms          | Cross-browser/device testing, responsive design, error boundaries                |
+| General Development Practices | Hidden or silent errors                        | Lack of monitoring / logging                   | Logging with Sentry or LogRocket, staging environment testing, automated tests   |
+|                               | Missed edge cases                              | No QA or code review                           | Code reviews, unit & integration tests, user feedback loop                       |
 
-// 4️⃣ Communication & Support (EXTRA??)
-/*
-- Live chat / chatbot for questions about availability or scheduling
-- Notifications for stock replenishment or time slot openings
-- FAQ section for common questions
-*/
+---
 
-// 5️⃣ User Engagement & Trust (EXTRA)
-/*
-- Reviews and ratings for trust
-- Wishlist / reminders to save items for later
-- Loyalty points / discounts to reward frequent users
-*/
+## **Usage**
 
-// 6️⃣ Administrative Features (optional, backend)
-/*
-- Dashboard for staff: scheduled orders, stock levels, upcoming deliveries
-- Automatic capacity limits: prevent overbooking
-- Analytics: track popular times, stock trends
-*/
+1. Use this README as a **reference for developers** during implementation.
+2. Track **bug prevention measures** while building features.
+3. Keep this document **updated** with new features, known issues, and mitigation strategies.
 
-// Extra Enhancements (Needed)
-/*
-- Responsive design for mobile and tablets
-- Visual cues: color-coded availability, icons for stock levels
-- Accessibility: keyboard navigation and screen reader friendly
-*/
+---
 
-// SERVICE PAGE BLUEPRINT
+This README is **Next.js ready**, and can be placed in `/docs` or the project root for easy team reference.
 
-// 1️⃣ Hero / Header Section
-/*
-Purpose: Introduce product, prompt user to act
-Components:
-- Product name & short description
-- Product image/gallery carousel
-- Price & availability status ("In Stock", "Low Stock", "Out of Stock")
-- CTA button: "Schedule Purchase"
-- Visual cue: highlight limited/high-demand products
-*/
+# Herb App: Service Page Blueprint – Schedule & Purchase System
 
-// 2️⃣ Scheduling Section
-/*
-Purpose: Let users select when they want to buy or pick up
-Components:
-- Calendar picker: show available dates, disable unavailable
-- Time slots dropdown: show delivery/pickup times
-- Real-time stock indicator
-- Optional: recurring purchase options
-Interactions:
-- Clicking date updates available times
-- Hovering over date shows stock/delivery info
-- Selected date/time summary in sidebar
-*/
+This document outlines the blueprint for a service page for an herb-selling app, including scheduling, purchase flow, personalization, and administrative considerations.
 
-// 3️⃣ Purchase & Reservation Section
-/*
-Purpose: Confirm booking and handle payment/reservation
-Components:
-- Quantity selector
-- Reservation summary (product, date, time)
-- Delivery/pickup selector
-- Payment options: Prepay, Pay-on-Delivery, Wallet
-- Confirm button triggers booking & generates confirmation
-Interactions:
-- Confirmation page/modal shows booking ID, date/time, stock guarantee
-- Reschedule/cancel button
-*/
+---
 
-// 4️⃣ Availability & Stock Info Section
-/*
-Purpose: Transparency for stock & delivery
-Components:
-- Stock graph / progress bar
-- Estimated delivery/pickup window
-- Back-in-stock notifications (email/SMS)
-Interactions:
-- Users can subscribe to notifications for specific products/time slots
-*/
+## **1. Recommended Frameworks**
 
-// 5️⃣ Recommendations & Alternatives Section
-/*
-Purpose: Suggest related products or alternatives
-Components:
-- Related products carousel
-- "Similar items" with availability indicators
-- Quick schedule buttons for alternatives
-*/
+* **Next.js**: Recommended for SEO, fast initial page loads, and built-in optimizations.
+* **React**: Ideal for highly interactive, app-like experiences behind authentication.
 
-// 6️⃣ Reviews & Ratings Section
-/*
-Purpose: Build trust and inform users
-Components:
-- Star rating summary
-- User reviews & photos
-- Filter by date/rating
-*/
+---
 
-// 7️⃣ User Engagement & Extras
-/*
-Components:
-- Wishlist / Save for later
-- Loyalty points / discount info
-- Share buttons (social/email)
-*/
+## **2. Key Features & Pages**
 
-// 8️⃣ Support & FAQ Section
-/*
-Purpose: Address questions & help with scheduling
-Components:
-- Chatbot / live chat
-- FAQ accordion
-- Contact form / support info
-*/
+### **Questionnaire (Optional)**
 
-// 9️⃣ Admin / Backend Considerations
-/*
-- Dashboard: scheduled orders, stock, upcoming deliveries
-- Automatic capacity control
-- Analytics: popular times/days, stock trends
-*/
+* Short questionnaire to collect user preferences before scheduling or recommending products.
 
-// Visual / UX Tips
-/*
-- Color-coded availability: green = available, yellow = limited, red = sold out
-- Sticky sidebar with booking summary
-- Responsive layout: calendar & booking form adjust to screen size
-- Tooltips: explain delivery windows, stock numbers, etc.
-*/
+### **Scheduling & Availability Features (IMPORTANT)**
 
-// ✅ User Flow Summary
-/*
-1. Visit product page → see stock & availability
-2. Pick date & time → see real-time stock
-3. Choose quantity & delivery/pickup → confirm reservation
-4. Payment (optional) → booking confirmation
-5. Notifications & reminders → fulfilled order
-*/
+* Calendar picker – select exact dates and time slots.
+* Time-based availability – show when product is in stock.
+* Delivery/Pickup options.
+* Automated reminders via email or SMS.
+
+### **Product Information & Personalization (IMPORTANT)**
+
+* Real-time stock updates.
+* Product details: images, price, description.
+* Alternative suggestions based on availability or preferences.
+* Remember user preferences for future recommendations.
+
+### **Booking / Purchase Flow (Optional/Extra)**
+
+* Add-to-cart or reservation system.
+* Booking confirmations.
+* Payment options and checkout.
+
+### **Communication & Support (Optional/Extra)**
+
+* Live chat or chatbot support.
+* Stock or timeslot notifications.
+* FAQ for scheduling and purchasing.
+
+### **User Engagement & Trust (Optional/Extra)**
+
+* Reviews and ratings.
+* Wishlist or reminders.
+* Loyalty points / discounts.
+
+### **Administrative Features (Backend, Optional)**
+
+* Staff dashboard for managing orders and inventory.
+* Automatic stock capacity limits.
+* Analytics for demand trends.
+
+---
+
+## **3. Extra Enhancements (Recommended)**
+
+* Fully responsive design.
+* Color-coded availability calendar.
+* Accessibility-friendly calendar picker.
+
+---
+
+## **4. Page Structure / Sections**
+
+### **Hero / Header Section**
+
+* Product name & description.
+* Image carousel.
+* Availability status.
+* “Schedule Purchase” button.
+
+### **Scheduling Section**
+
+* Calendar picker.
+* Timeslot selector.
+* Real-time stock indicator.
+* Recurring purchase option.
+
+### **Purchase & Reservation Section**
+
+* Quantity selector.
+* Reservation summary.
+* Delivery/pickup options.
+* Payment flow.
+
+### **Availability & Stock Info Section**
+
+* Stock graph or progress bar.
+* Delivery/pickup window.
+* Back-in-stock notifications.
+
+### **Recommendations & Alternatives Section**
+
+* Related items carousel.
+* Similar items with availability indicators.
+
+### **Reviews & Ratings Section**
+
+* Star ratings.
+* User photos & filters.
+
+### **User Engagement & Extras**
+
+* Wishlist, discounts.
+* Social sharing buttons.
+
+### **Support & FAQ Section**
+
+* Chatbot or live chat.
+* FAQ accordion.
+* Contact form.
+
+### **Admin / Backend Considerations**
+
+* Dashboard for staff.
+* Capacity control / stock management.
+* Analytics and demand trend reporting.
+
+---
+
+## **5. Milestones**
+
+* Package features into structured deliverables for staged review.
+* Prioritize **core scheduling and purchase flow** first, followed by personalization, support, and admin features.
+
+---
+
+## **6. Notes**
+
+* Focus on **user experience** and **real-time updates**.
+* Ensure **responsive design** and **accessibility** throughout.
+* Consider **Next.js optimizations** for fast load times and SEO where public pages are concerned.
 
 
- Core Next.js Dependencies
 
-next – The main framework for building your app; handles routing, SSR, and build processes.
 
-react – The UI library powering your components and page structure.
 
-react-dom – Provides the rendering layer for React in the browser.
+# Herb-Based Wellness Experience: Feature Documentation
 
-UI / Styling
+This document outlines the key features of the Herb-Based Wellness Experience app, focused on herbs for teas, diffusers, and more.
 
-tailwindcss – Optional utility-first CSS framework for responsive, consistent styling.
+---
 
-postcss – Required by Tailwind to process CSS.
+## **1. Emotion-Based Herb Selection**
 
-autoprefixer – Automatically adds browser prefixes to CSS rules (needed for Tailwind).
+Users can choose herbs based on how they want to feel or what they want to improve, including:
 
-(If using pure vintage CSS, Tailwind/postcss/autoprefixer are optional.)
+* Stress relief
+* Happiness & mood boosting
+* Sadness & emotional grounding
+* Calmness & relaxation
+* Energy & focus
+* Sleep & restfulness
+* Confidence, clarity, digestion, immunity, and more
 
-Components
+*Purpose:* Provides an intuitive way for customers to find herbs that match their emotional or wellness needs.
 
-react-calendar – For the date selection / calendar picker.
+---
 
-react-datepicker – Optional alternative for date & time slot selection.
+## **2. Multiple Uses Beyond Tea**
 
-react-modal – For booking confirmation modals or pop-ups.
+Each herb includes a list of possible uses:
 
-Carousel / Image Gallery
+* Tea & infusions
+* Aromatherapy / herbal steaming
+* Bath blends
+* Culinary uses (seasoning, broths, smoothies)
+* Herbal oils & tincture possibilities
+* Incense or loose-burning blends
 
-swiper – Modern, responsive carousel for product images or related items.
+*Purpose:* Allows users to explore all ways herbs can support their lifestyle.
 
-Charts / Stock Graphs
+---
 
-recharts – Lightweight charting library for stock levels or availability visualization.
+## **3. Transparent Herb Ingredients & Origins**
 
-chart.js – Alternative charting library for more customization.
+Each herb page shows:
 
-react-chartjs-2 – React wrapper for Chart.js, allowing easy integration.
+* Full ingredient list
+* Source location (local growers, farms, etc.)
+* Harvest method
+* Purity standards (organic, wildcrafted, pesticide-free, etc.)
+* Allergen notes or cautions
+* Explanation of what part of the plant is used (flower, root, leaf, etc.)
 
-Forms / Validation
+*Purpose:* Builds trust and helps customers make informed choices.
 
-react-hook-form – Handles form input and submission efficiently.
+---
 
-yup – Validates form inputs (e.g., scheduling, quantity).
+## **4. Packaging & Delivery Process**
 
-@hookform/resolvers – Connects yup validation with react-hook-form.
+Clear explanation of how each order is handled:
 
-Notifications
+1. **Freshness Check** – herbs inspected for quality and potency.
+2. **Cleaning & Drying** – cleaned, dried, or processed depending on herb type.
+3. **Hand-Measured Portions** – herbs weighed, blended, or separated per order.
+4. **Eco-Friendly Packaging** – sealed in biodegradable or recyclable materials.
+5. **Labeling** – includes herb name, uses, potency notes, brewing instructions, and expiration.
+6. **Shipping** – carefully boxed and tracked for fast delivery.
+7. **Optional Gift Packaging** – premium boxes for ceremonial or special orders.
 
-react-toastify – Shows pop-up notifications for booking confirmations or alerts.
+*Purpose:* Helps customers understand the care and quality behind every product.
 
-Chat / Support (Optional)
+---
 
-@chatscope/chat-ui-kit-react – Pre-built UI components for live chat or chatbot support.
+## **5. Tea Ceremony Experience (Optional Feature)**
 
-Backend / API Calls
+Add a guided online or in-person tea ceremony that includes:
 
-axios – Simplifies HTTP requests to fetch product data, availability, and submit bookings.
+* Step-by-step brewing ritual
+* Setting intention before drinking
+* Breathing exercises or mindfulness prompts
+* Audio or video guides
+* Cultural background and symbolism
+* Special ceremony kits customers can purchase
 
-Environment Variables
+*Purpose:* Creates a deeper emotional and spiritual connection with the herbs.
 
-No dependency needed; use .env.local to store API keys securely.
+---
 
-Optional / Extras
-
-classnames – Helps conditionally apply CSS classes (e.g., color-coded availability).

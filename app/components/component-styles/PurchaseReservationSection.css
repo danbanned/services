@@ -1,0 +1,193 @@
+.prs-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  background: #fff;
+}
+
+.prs-panel {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 12px;
+}
+
+.prs-header {
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.prs-title {
+  font-family: "Spectral", serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #1c2a3a;
+  margin-bottom: 10px;
+}
+
+.prs-subtitle {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Pique-style card */
+.prs-card,
+.prs-summary-card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  padding: 22px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+}
+
+.prs-card-title {
+  font-family: "Spectral", serif;
+  font-size: 18px;
+  color: #1d2a39;
+  margin-bottom: 16px;
+}
+
+/* Quantity Box */
+.prs-quantity-box {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.prs-qty-btn {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #cfcfcf;
+  background: #fff;
+  font-size: 22px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.prs-qty-value {
+  font-size: 28px;
+  font-weight: bold;
+  color: #c88a3c;
+  width: 40px;
+  text-align: center;
+}
+
+/* Benefits */
+.prs-benefits-card {
+  background: #faf7f2;
+  border-color: #eedcc0;
+}
+
+.prs-benefits-list li {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+/* Payment Methods */
+.prs-payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.prs-payment-option {
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  gap: 12px;
+  cursor: pointer;
+  background: #fff;
+}
+
+.prs-payment-option.active {
+  border-color: #c88a3c;
+  background: #faf5ec;
+}
+
+.prs-payment-info {
+  display: flex;
+  gap: 10px;
+}
+
+.prs-payment-label {
+  font-weight: 600;
+  color: #1b1b1b;
+}
+
+.prs-payment-desc {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Summary */
+.prs-summary-title {
+  font-family: "Spectral", serif;
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.prs-summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.prs-summary-line {
+  height: 1px;
+  background: #ddd;
+  margin: 14px 0;
+}
+
+.prs-discount {
+  color: #0c7a3b;
+}
+
+.prs-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.prs-total-value {
+  color: #c88a3c;
+}
+
+/* Buttons */
+.prs-main-btn {
+  width: 100%;
+  background: #c88a3c;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  font-size: 17px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 18px;
+}
+
+.prs-secondary-btn {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.prs-confirm-box {
+  background: #e5f7e5;
+  border: 1px solid #b8e0b8;
+  text-align: center;
+  color: #196c19;
+  padding: 10px;
+  margin-top: 14px;
+  border-radius: 6px;
+}

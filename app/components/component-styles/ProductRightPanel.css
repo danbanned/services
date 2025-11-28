@@ -1,0 +1,18 @@
+.psp-panel {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
+}
+
+.psp-block {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  padding: 18px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+}

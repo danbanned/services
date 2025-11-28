@@ -3,11 +3,6 @@
    Hero uses both a full background + two angled edge images.
 */
 
-
-
-
-
-
 :root{
   --cream: #fff7ef;
   --tan: #f3e1c7;
@@ -74,24 +69,28 @@ body, html, #__next { height: 100%; margin: 0; }
   align-items:center;
   padding: 3rem 1.5rem;
 }
+
+.hero-overlay h1{
+  color: #f3e8d2;
+}
+
 .hero-inner{
   max-width: 980px;
   text-align: center;
-  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.88));
+  background: linear-gradient(180deg, rgb(255, 115, 0), rgba(239, 235, 235, 0.671));
   padding: 40px 48px;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(15,35,64,0.12);
-  border: 1px solid rgba(13,51,90,0.06);
 }
 .kicker{
-  color: var(--muted);
+  color: #1b1b1b;
   font-weight: 600;
   letter-spacing: .02em;
   margin-bottom: 12px;
   font-size: 0.95rem;
 }
 .hero-title{
-  color: var(--navy);
+  color: #f8f7f7;;
   font-size: 2.6rem;
   margin: 0 0 8px;
   line-height: 1.04;
@@ -99,7 +98,7 @@ body, html, #__next { height: 100%; margin: 0; }
   font-family: "Georgia", serif;
 }
 .hero-sub{
-  color: var(--muted);
+  color: #f3e8d2;
   margin-bottom: 18px;
   max-width: 720px;
   margin-left: auto;
@@ -127,7 +126,7 @@ body, html, #__next { height: 100%; margin: 0; }
 }
 
 /* ---------- HOW IT WORKS CARDS ---------- */
-.how-it-works{ padding: 42px 20px; text-align: center; background: #fff; }
+.how-it-works{ padding: 42px 20px; text-align: center; background: #ffffff; }
 .how-it-works h2{ font-family: "Georgia", serif; font-size: 1.8rem; color: var(--navy); margin-bottom: 20px; }
 .cards{ max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: stretch; }
 .card{ background: var(--card-bg); padding: 18px; border-radius: 10px; box-shadow: 0 6px 18px rgba(15,35,64,0.06); text-align:center; }
@@ -308,7 +307,7 @@ body, html, #__next { height: 100%; margin: 0; }
 
 /* Footer */
 .site-footer {
-  background: #fff;
+  background: #ffffff;
   padding: 2rem 0;
   text-align: center;
   color: #666;
@@ -316,5 +315,19 @@ body, html, #__next { height: 100%; margin: 0; }
 }
 
 .service-page{
-  background-image: url(/image9.jpg);
+  background-image: url(/image7.jpg);
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.75rem 1.4rem;
+  background: #1f7a1f;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background: #156015;
 }

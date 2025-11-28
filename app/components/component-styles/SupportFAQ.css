@@ -1,0 +1,348 @@
+/* Root Section */
+.support-faq-section {
+  padding: 4rem 1rem;
+  background-color: #f8f3e8; /* tea-house cream */
+  font-family: 'Inter', serif;
+  color: #463c2c; /* deep botanical brown */
+}
+
+/* Container */
+.support-faq-section .container {
+  max-width: 1400px;      /* was 1200px — gives more breathing room */
+  margin: 0 auto;
+  padding: 0 2rem;        /* slightly wider padding */
+}
+
+
+/* Section Header */
+.support-faq-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #463c2c;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.support-faq-section p {
+  font-size: 1.125rem;
+  color: #5c574d;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* Support Cards Grid */
+.support-faq-section .support-cards {
+  display: contents;
+  margin-bottom: 3rem;
+  width: 100%;            /* ensure full width available */
+}
+
+
+@media (min-width: 768px) {
+  .support-faq-section .support-cards {
+    grid-template-columns: repeat(3, 1fr);
+
+    /* fix cards being too narrow on larger screens */
+    column-gap: 2.5rem;
+  }
+}
+
+/* Individual Card */
+.support-faq-section .support-card {
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid #d6cbb8; /* antique border */
+  background: linear-gradient(135deg, #e9e5d6, #f7f5ef);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  /* equal sizing & scrollable content */
+  height: 350px;
+  max-height: 350px;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* scrollbar styling */
+.support-faq-section .support-card::-webkit-scrollbar {
+  width: 8px;
+}
+
+.support-faq-section .support-card::-webkit-scrollbar-thumb {
+  background: #b8ad99;
+  border-radius: 8px;
+}
+
+.support-faq-section .support-card::-webkit-scrollbar-track {
+  background: #f1ece2;
+}
+
+.support-faq-section .support-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.1);
+}
+
+/* Card Variants — herbal tones */
+.support-card.chat {
+  background: linear-gradient(135deg, #efe8d7, #f8f4eb); /* warm parchment */
+  border-color: #c6a667; /* old gold */
+}
+
+.support-card.email {
+  background: linear-gradient(135deg, #e4ede5, #f5f7f2); /* sage + mint */
+  border-color: #7c8c6c;
+}
+
+.support-card.phone {
+  background: linear-gradient(135deg, #e9f0e2, #f7f9f3); /* soft herbal green */
+  border-color: #8aa87a;
+}
+
+/* Card Titles */
+.support-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #463c2c;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.3px;
+}
+
+/* Card Text */
+.support-card p {
+  color: #5f5b52;
+  line-height: 1.7;
+
+  /* text clamp for aesthetics even when scrollable */
+  display: -webkit-box;
+  -webkit-line-clamp: 12;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Card Buttons & Links */
+.support-card button,
+.support-card a {
+  margin-top: auto;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.2px;
+}
+
+/* Warm vintage button */
+.support-card.chat button {
+  background-color: #7c6a54;
+  color: #fff;
+}
+
+.support-card.chat button:hover {
+  background-color: #5f4f3f; 
+}
+
+.support-card.email a {
+  color: #6e7e60;
+}
+
+.support-card.email a:hover {
+  text-decoration: underline;
+}
+
+.support-card.phone a {
+  color: #5c7a57;
+}
+
+.support-card.phone a:hover {
+  text-decoration: underline;
+}
+
+/* FAQ Accordion */
+.support-faq-section .faq-item {
+  border: 1px solid #d6cbb8;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background-color: #f9f6ee; /* old paper */
+  transition: box-shadow 0.2s ease;
+}
+
+.support-faq-section .faq-item:hover {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+
+.support-faq-section .faq-question {
+  width: 100%;
+  padding: 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.125rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background-color: #fcfaf3;
+  color: #463c2c;
+  transition: background-color 0.2s ease;
+}
+
+.support-faq-section .faq-question:hover {
+  background-color: #f1eadc;
+}
+
+.support-faq-section .faq-question.open {
+  background-color: #e8dfcc;
+  color: #7c6a54;
+}
+
+.support-faq-section .faq-answer {
+  padding: 1.5rem;
+  background-color: #fcf9f2;
+  color: #5f5b52;
+  line-height: 1.7;
+  border-top: 1px solid #d6cbb8;
+}
+
+/* Newsletter Signup */
+.support-faq-section .newsletter {
+  background: linear-gradient(90deg, #c2b59b, #a4937a); /* soft muted earthy gold */
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.support-faq-section .newsletter h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.support-faq-section .newsletter p {
+  font-size: 1.125rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.support-faq-section .newsletter form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .support-faq-section .newsletter form {
+    flex-direction: row;
+  }
+}
+
+.support-faq-section .newsletter input[type="email"] {
+  flex: 1;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  border: none;
+  font-weight: 600;
+  outline: none;
+}
+
+.support-faq-section .newsletter input[type="email"]:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.45);
+}
+
+.support-faq-section .newsletter button {
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  background-color: #fff;
+  color: #7c6a54;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.support-faq-section .newsletter button:hover {
+  background-color: #f4f1eb;
+}
+
+
+/* Dropdown Wrapper */
+.support-cards-dropdown {
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+/* Dropdown Toggle Button */
+.support-cards-dropdown .dropdown-toggle {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  background-color: #fcfaf3;
+  border: 1px solid #d6cbb8;
+  border-radius: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #463c2c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.support-cards-dropdown .dropdown-toggle:hover {
+  background-color: #f1eadc;
+}
+
+.support-cards-dropdown .dropdown-toggle.open {
+  background-color: #e8dfcc;
+  color: #7c6a54;
+}
+
+/* Dropdown Icon Rotation */
+.support-cards-dropdown .dropdown-icon {
+  transition: transform 0.25s ease;
+}
+
+.support-cards-dropdown .dropdown-icon.rotate {
+  transform: rotate(180deg);
+}
+
+/* Support Cards Inside Dropdown */
+.support-cards-dropdown .support-cards {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.support-cards::-webkit-scrollbar {
+  width: 8px;
+}
+.support-cards::-webkit-scrollbar-thumb {
+  background: #c6a667;
+  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  .support-cards-dropdown .support-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+

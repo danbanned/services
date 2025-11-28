@@ -1,0 +1,100 @@
+.reviews-section {
+padding: 3rem 1rem; /* less vertical space */
+background-color: #f9faf9;
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+color: #1f1f1f;
+}
+
+.reviews-section .container {
+max-width: 1000px; /* narrower section */
+margin: 0 auto;
+padding: 0 1rem;
+}
+
+.header-section h2 {
+font-size: 2rem; /* slightly smaller title */
+font-weight: 700;
+margin-bottom: 0.5rem;
+color: #111111;
+}
+
+.header-section p {
+font-size: 1rem;
+color: #555555;
+line-height: 1.5;
+}
+
+.reviews-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 1.5rem; /* smaller gap */
+margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+.reviews-grid {
+grid-template-columns: 1fr 2fr;
+}
+}
+
+.card {
+background-color: #ffffff;
+border-radius: 0.75rem; /* slightly smaller radius /
+padding: 1.5rem; / smaller padding /
+box-shadow: 0 2px 8px rgba(0,0,0,0.05); / lighter shadow */
+}
+
+.summary-card .avg-rating {
+font-size: 2.5rem; /* smaller number */
+}
+
+.review-form-card h3 {
+font-size: 1.25rem;
+}
+
+.review-form-card input,
+.review-form-card textarea {
+padding: 0.5rem 0.75rem; /* smaller fields */
+font-size: 0.95rem;
+}
+
+.submit-btn {
+padding: 0.5rem 0.75rem;
+font-size: 0.95rem;
+}
+
+.reviews-list {
+margin-top: 2rem; /* less vertical space */
+}
+
+.review-card {
+padding: 1rem; /* smaller padding /
+border-radius: 0.75rem;
+border-left-width: 3px; / slightly thinner border */
+}
+
+.review-header img {
+width: 2.5rem;
+height: 2.5rem;
+}
+
+.review-title {
+font-size: 1rem;
+}
+
+.review-text {
+font-size: 0.95rem;
+}
+
+.helpful-btn {
+font-size: 0.875rem;
+color: #555555;
+background: none;
+border: none;
+cursor: pointer;
+transition: color 0.2s;
+}
+
+.helpful-btn:hover {
+color: #d97706;
+}

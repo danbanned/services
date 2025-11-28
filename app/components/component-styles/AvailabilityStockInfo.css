@@ -1,0 +1,200 @@
+/* ============================================================
+   PRODUCT SIDE PANEL STYLE (matches screenshot)
+   Clean • Minimal • Thin Borders • Serif Headings • Navy Text
+   ============================================================ */
+
+/* Outer section */
+.asi-section {
+  background: #ffffff;
+  padding: 0; 
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Container stays narrow like the product sidebar */
+.asi-inner {
+  max-width: 420px;
+  width: 100%;
+}
+
+/* Header */
+.asi-header h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.65rem;
+  color: #1c2a3a;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.asi-header p {
+  font-size: 0.92rem;
+  color: #666;
+  margin-bottom: 1.75rem;
+  line-height: 1.45;
+}
+
+/* GRID (stacked column like product sidebar) */
+.asi-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* CARD BASE — EXACT PRODUCT PANEL LOOK */
+.asi-card,
+.asi-wide-card {
+  background: #ffffff;
+  border: 1px solid #e5e5e5; /* thin soft gray */
+  border-radius: 8px;
+  padding: 1.25rem 1.4rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04); /* barely visible shadow */
+}
+
+/* CARD HEADINGS — serif, premium */
+.asi-card h3,
+.asi-wide-card h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.9rem;
+  font-weight: 600;
+  color: #1c2a3a;
+}
+
+/* STOCK ROW */
+.asi-stock-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+}
+
+.asi-stock-label {
+  color: #333;
+}
+
+.asi-stock-value {
+  color: #1c2a3a;
+  font-weight: 600;
+}
+
+/* PROGRESS BAR (clean + small) */
+.asi-stock-bar {
+  width: 100%;
+  height: 7px;
+  background: #f0ede6;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.9rem;
+}
+
+.asi-stock-fill {
+  height: 100%;
+  background: #1c2a3a;
+  transition: width 0.4s ease;
+}
+
+/* STOCK NOTE BOX */
+.asi-stock-note-title {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: #1c2a3a;
+}
+
+.asi-stock-note-sub {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.2rem;
+  line-height: 1.4;
+}
+
+/* DELIVERY BOX */
+.asi-delivery-box {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0.6rem 0;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background: #faf9f6;
+}
+
+.asi-delivery-label {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.asi-delivery-days {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.9rem;
+  color: #1c2a3a;
+  font-weight: 600;
+}
+
+.asi-delivery-sub {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* DELIVERY LIST (matches product sidebar list spacing) */
+.asi-delivery-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.asi-delivery-list li {
+  display: flex;
+  gap: 0.7rem;
+  margin-bottom: 0.85rem;
+  align-items: flex-start;
+}
+
+.asi-emoji {
+  font-size: 1.2rem;
+  margin-top: 0.1rem;
+}
+
+.asi-list-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1c2a3a;
+}
+
+.asi-list-sub {
+  font-size: 0.82rem;
+  color: #555;
+  margin-top: 0.1rem;
+}
+
+/* FULL-WIDTH BACK IN STOCK BOX */
+.asi-wide-card {
+  border-color: #eaeaea;
+}
+
+.asi-wide-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.asi-wide-sub {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+/* BUTTON — minimal, sidebar style */
+.asi-btn {
+  background: #1c2a3a;
+  color: #ffffff;
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.asi-btn:hover {
+  background: #12202e;
+}

@@ -1,0 +1,245 @@
+/* =====================
+   General Section
+===================== */
+.scheduling-section {
+  padding: 5rem 1rem;
+  background: linear-gradient(135deg, #fff8f0, #fff3e6);
+  font-family: 'Helvetica Neue', 'Segoe UI', sans-serif;
+  color: #1f2937;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.max-width {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* =====================
+   Section Header
+===================== */
+.section-header h2 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  color: #111827;
+  line-height: 1.2;
+}
+
+.section-header p {
+  font-size: 1.125rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* =====================
+   Grid Layout
+===================== */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media(min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.time-delivery-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* =====================
+   Cards
+===================== */
+.card {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+  font-size: 1.625rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+/* =====================
+   Calendar
+===================== */
+.react-calendar-custom {
+  border: none;
+  width: 100%;
+  font-family: inherit;
+}
+
+.selected-date span {
+  font-weight: 700;
+  color: #f59e0b;
+}
+
+/* =====================
+   Time Slots
+===================== */
+.time-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.time-slot {
+  display: flex;
+  justify-content: space-between;
+    width: 9.25rem;
+
+  padding: 1rem 1.25rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.time-slot:hover {
+  border-color: #fbbf24;
+  background-color: #fffbf5;
+}
+
+.time-slot.selected {
+  border-color: #f59e0b;
+  background-color: #fffbf0;
+  color: #b45309;
+}
+
+/* =====================
+   Stock Colors
+===================== */
+.stock-high { color: #15803d; }
+.stock-medium { color: #b45309; }
+.stock-low { color: #b91c1c; }
+
+/* =====================
+   Delivery Options
+===================== */
+.delivery-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.delivery-option {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.delivery-option:hover {
+  background-color: #f9fafb;
+  border-color: #fcd34d;
+}
+
+.delivery-option input {
+  margin-top: 0.25rem;
+}
+
+.option-text p {
+  margin: 0;
+  font-weight: 500;
+  color: #111827;
+}
+
+.option-desc {
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1;
+}
+
+/* =====================
+   Recurring Subscription
+===================== */
+.recurring {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.recurring input {
+  width: 6.25rem;
+  height: 1rem;
+}
+
+.recurring-note {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #fffbf0;
+  border: 1px solid #fde68a;
+  border-radius: 0.75rem;
+  color: #4b5563;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* =====================
+   Action Buttons
+===================== */
+.actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.btn.primary {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.btn.primary:hover {
+  background-color: #b45309;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.btn.secondary {
+  background-color: #fff;
+  color: #1f2937;
+  border: 2px solid #d1d5db;
+}
+
+.btn.secondary:hover {
+  background-color: #f9fafb;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
