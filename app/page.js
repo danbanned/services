@@ -132,7 +132,7 @@ const subtotal = cartItems.reduce((s, it) => s + (it.price || it.originalPrice |
 // ---------------------------
 // CSS isolation
 // ---------------------------
-const isolationStyle = { all: 'initial', display: 'block' };
+const isolationStyle = { all: 'unset', display: 'block' };
 const isolationInnerStyle = {
 fontFamily: 'Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial',
 color: '#0f2340',

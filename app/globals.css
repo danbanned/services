@@ -136,8 +136,12 @@ body, html, #__next { height: 100%; margin: 0; }
 .section-light{ background: var(--tan); padding: 36px 20px; }
 .section-plain{ padding: 36px 20px; background: transparent; }
 
-.container{ max-width: 1100px; margin: 0 auto; display:flex; gap: 28px; align-items: center; }
-.container.narrow{ max-width: 820px; margin: 0 auto; }
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}.container.narrow{ max-width: 820px; margin: 0 auto; }
 
 .container .left{ flex: 1; }
 .container .right{ flex: 1; display:flex; justify-content:center; align-items:center; }
@@ -253,8 +257,7 @@ body, html, #__next { height: 100%; margin: 0; }
 }
 
 /* Scheduling & Reservation split layout */
-.scheduling-section .container,
-.purchase-section .container {
+.scheduling-section .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   max-width: 1100px;
@@ -264,8 +267,7 @@ body, html, #__next { height: 100%; margin: 0; }
 }
 
 /* Left text column */
-.scheduling-section .left,
-.purchase-section .col {
+.scheduling-section .left{
   display: flex;
   flex-direction: column;
   gap: 1.2rem;

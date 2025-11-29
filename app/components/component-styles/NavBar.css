@@ -3,21 +3,22 @@
    ================================ */
 
 .rr-nav {
-  background-color: #6f8a62; /* sage green */
+  background-color: #6f8a62;
   width: 100%;
   padding: 0.75rem 0;
   font-family: 'Georgia', serif;
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 9999;   /* ← bump this WAY up */
   height: 12%;
 }
 
+
 /* Main layout */
 .rr-nav-inner {
-  max-width: 1300px;
+  max-width: 1400px;       /* widened for smoother page flow */
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 2.5rem;
 
   display: flex;
   align-items: center;
@@ -86,20 +87,26 @@
   margin-left: 1rem;
 }
 
-/* Bottom divider */
+/* Bottom divider (now full-width) */
 .rr-divider {
-  background-color: #e8d8c4; /* beige divider */
+  background-color: #e8d8c4;
   height: 2px;
-  width: 27%;
+  width: 100%;           /* FULL WIDTH */
+  margin-top: 0.5rem;    /* soft spacing */
 }
 
 /* --------------------------
    RESPONSIVE
    -------------------------- */
 @media (max-width: 800px) {
+  .rr-nav-inner {
+    padding: 0 1.25rem;
+  }
+
   .rr-links {
     gap: 1rem;
   }
+
   .rr-logo-main {
     font-size: 1.2rem;
   }

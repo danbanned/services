@@ -1,12 +1,10 @@
-'use client';
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import React, { useState } from 'react';
 import './component-styles/RecommendationsCarousel.css'; // <-- Link to CSS
 
+
 export default function RecommendationsCarousel({ recommendations }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const items = recommendations || [
     {
       id: 1,
@@ -51,54 +49,76 @@ export default function RecommendationsCarousel({ recommendations }) {
     }
   };
 
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % items.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + items.length) % items.length);
+  };
+
+  const visibleItems = 4;
+  const displayedItems = [];
+  for (let i = 0; i < visibleItems; i++) {
+    displayedItems.push(items[(currentIndex + i) % items.length]);
+  }
+
   return (
-    <section className="recommendations-section">
-      <div className="container">
-        <div className="section-header">
+    <>
+
+      <section className="recommendations-section">
+        {/* Header with curved bottom */}
+        <div className="recommendations-header">
           <h2>You Might Also Like</h2>
-          <p>Similar herbs and blends that pair well with your selection.</p>
         </div>
 
-        <Swiper
-          spaceBetween={24}
-          slidesPerView={1}
-          breakpoints={{
-            640: { slidesPerView: 2 },
-            1024: { slidesPerView: 4 },
-          }}
-          pagination={{ clickable: true }}
-          className="recommendations-swiper"
-        >
-          {items.map((item) => {
-            const badge = getAvailabilityBadge(item.availability);
-            return (
-              <SwiperSlide key={item.id}>
-                <div className="card">
-                  <div className="card-image">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      onError={(e) => {
-                        e.target.src =
-                          'https://via.placeholder.com/250x300?text=' +
-                          encodeURIComponent(item.name);
-                      }}
-                    />
-                    <div className={badge.className}>{badge.text}</div>
-                  </div>
-                  <div className="card-content">
-                    <h3>{item.name}</h3>
-                    <div className="card-footer">
-                      <span className="price">${item.price.toFixed(2)}</span>
-                      <button className="schedule-btn">Schedule</button>
+        <div className="recommendations-container">
+          <div className="section-subheader">
+            <p>Similar herbs and blends that pair well with your selection.</p>
+          </div>
+
+          <div className="carousel-wrapper">
+            <button className="carousel-nav prev" onClick={prevSlide}>
+              ‹
+            </button>
+
+            <div className="carousel-container">
+              <div className="carousel-track">
+                {displayedItems.map((item) => {
+                  const badge = getAvailabilityBadge(item.availability);
+                  return (
+                    <div key={item.id} className="card">
+                      <div className="card-image">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          onError={(e) => {
+                            e.target.src =
+                              'https://via.placeholder.com/250x300?text=' +
+                              encodeURIComponent(item.name);
+                          }}
+                        />
+                        <div className={badge.className}>{badge.text}</div>
+                      </div>
+                      <div className="card-content">
+                        <h3>{item.name}</h3>
+                        <div className="card-footer">
+                          <span className="price">${item.price.toFixed(2)}</span>
+                          <button className="schedule-btn">Schedule</button>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-      </div>
-    </section>
+                  );
+                })}
+              </div>
+            </div>
+
+            <button className="carousel-nav next" onClick={nextSlide}>
+              ›
+            </button>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
