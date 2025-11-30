@@ -1,6 +1,6 @@
 'use client';
-import React from 'react';
-import './component-styles/ProductHeroSection.css';
+
+import './component-styles/ProductHeroSection.css'
 
 export default function ProductHeroSection({ product }) {
   const { name, description, price, availability, image, discount } = product;
@@ -33,25 +33,18 @@ export default function ProductHeroSection({ product }) {
 
   return (
     <section className="hero-section">
+      <div className="hero-background">
+        <img
+          src={image}
+          alt={name}
+          className="hero-background-image"
+          onError={(e) => {
+            e.target.src = 'https://via.placeholder.com/1920x800?text=' + encodeURIComponent(name);
+          }}
+        />
+      </div>
       <div className="container">
         <div className="hero-grid">
-          {/* Hero Image */}
-          <div className="hero-image-wrapper">
-            <img
-              src={image}
-              alt={name}
-              className="hero-image"
-              onError={(e) => {
-                e.target.src = 'https://via.placeholder.com/500x600?text=' + encodeURIComponent(name);
-              }}
-            />
-            {discount && (
-              <div className="discount-badge">
-                {discount}% OFF
-              </div>
-            )}
-          </div>
-
           {/* Hero Content */}
           <div className="hero-content">
             <div className="hero-text">
@@ -76,6 +69,11 @@ export default function ProductHeroSection({ product }) {
           </div>
         </div>
       </div>
+      {discount && (
+        <div className="discount-badge">
+          {discount}% OFF
+        </div>
+      )}
     </section>
   );
 }

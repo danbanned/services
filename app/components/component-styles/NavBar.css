@@ -9,14 +9,12 @@
   font-family: 'Georgia', serif;
   position: sticky;
   top: 0;
-  z-index: 9999;   /* ← bump this WAY up */
-  height: 12%;
+  z-index: 9999;
 }
-
 
 /* Main layout */
 .rr-nav-inner {
-  max-width: 1400px;       /* widened for smoother page flow */
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 2.5rem;
 
@@ -26,7 +24,7 @@
 }
 
 /* --------------------------
-   LOGO 
+   LOGO WITH IMAGE
    -------------------------- */
 .rr-logo {
   display: flex;
@@ -35,9 +33,18 @@
   text-decoration: none;
 }
 
+/* NEW — logo image */
+.rr-logo-img {
+  height: 65px;       /* adjust smaller or bigger */
+  width: auto;        /* keeps proportions */
+  object-fit: contain;
+  display: block;
+
+}
+
+/* remove old icon block */
 .rr-logo-icon {
-  font-size: 1.75rem;
-  color: #f3e8d2;
+  display: none;
 }
 
 .rr-logo-text {
@@ -87,12 +94,12 @@
   margin-left: 1rem;
 }
 
-/* Bottom divider (now full-width) */
+/* Divider */
 .rr-divider {
   background-color: #e8d8c4;
   height: 2px;
-  width: 100%;           /* FULL WIDTH */
-  margin-top: 0.5rem;    /* soft spacing */
+  width: 100%;
+  margin-top: 0.5rem;
 }
 
 /* --------------------------
@@ -109,5 +116,9 @@
 
   .rr-logo-main {
     font-size: 1.2rem;
+  }
+
+  .rr-logo-img {
+    height: 45px;
   }
 }

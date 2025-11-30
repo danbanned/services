@@ -9,7 +9,14 @@ export default function NavBar() {
 
         {/* LOGO BLOCK */}
         <Link href="/" className="rr-logo">
-          <div className="rr-logo-icon">✦</div>
+
+          {/* IMAGE LOGO ADDED HERE */}
+          <img 
+            src="//images.squarespace-cdn.com/content/v1/655538741a3b8761a809601d/85459f10-bfd6-4e9e-81b4-ce60bc293434/R%26R_Beige.png?format=1500w"
+            alt="Rise & Ritual Logo" className="rr-logo-img"
+          />
+
+
           <div className="rr-logo-text">
             <span className="rr-logo-main">RISE & RITUAL</span>
             <span className="rr-logo-sub">SERVICES AND SCHEDULING</span>

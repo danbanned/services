@@ -1,9 +1,18 @@
-/* IngredientOrigins.css - Compact Version */
+/* IngredientOrigins.css - With Custom Fonts Applied */
 
 .ingredient-origins {
-  background: linear-gradient(135deg, #D2691E 0%, #E67E40 100%);
-  padding: 60px 20px;
-  font-family: 'Georgia', 'Times New Roman', serif;
+  background-image: url('/image9.jpg');
+  background-size: cover;      /* Make it fill the container */
+  background-position: center; /* Keep it centered */
+  background-repeat: no-repeat;/* Prevent tiling */
+
+  /* Wheat transparency blend */
+  background-color: rgba(245, 234, 216, 0.952); /* wheat with opacity */
+  background-blend-mode:color-burn;
+
+  padding: 60px 20px 0;
+  font-family: 'aktiv-grotesk', sans-serif;
+  margin-bottom: 0;
 }
 
 .ingredient-origins .container {
@@ -11,26 +20,31 @@
   margin: 0 auto;
 }
 
+/* TITLE — Moret */
 .ingredient-origins .title {
+  font-family: 'moret', serif;
   font-size: 32px;
   font-weight: 400;
   text-align: center;
-  color: #FFF8F0;
+  color: #bb2a02;
   margin: 0 0 12px 0;
   letter-spacing: -0.5px;
 }
 
+/* SUBTITLE — Aktiv Grotesk Light */
 .ingredient-origins .subtitle {
+  font-family: 'aktiv-grotesk', sans-serif;
   font-size: 16px;
   font-weight: 300;
   text-align: center;
-  color: #FFF8F0;
+  color: #bb2a02;
   margin: 0 auto 40px;
   max-width: 650px;
   line-height: 1.6;
   opacity: 0.95;
 }
 
+/* Cards */
 .ingredient-origins .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
@@ -40,12 +54,13 @@
 }
 
 .ingredient-origins .card {
-  background: rgba(251, 247, 242, 0.752);
+  background: rgba(251, 247, 242, 0.95);
   border: none;
   border-radius: 10px;
   padding: 24px 20px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: 'aktiv-grotesk', sans-serif;
 }
 
 .ingredient-origins .card:hover {
@@ -64,7 +79,9 @@
   display: block;
 }
 
+/* Card Heading — Degular Display */
 .ingredient-origins .heading {
+  font-family: 'degular-display', sans-serif;
   font-size: 17px;
   font-weight: 600;
   color: #8B4513;
@@ -72,11 +89,12 @@
   letter-spacing: -0.3px;
 }
 
-/* Ingredient List Styles */
+/* Ingredient List */
 .ingredient-origins .ingredient-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  font-family: 'aktiv-grotesk', sans-serif;
 }
 
 .ingredient-origins .ingredient-list li {
@@ -99,11 +117,12 @@
   font-size: 14px;
 }
 
-/* Origin Details Styles */
+/* Origin Details */
 .ingredient-origins .origin-details {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  font-family: 'aktiv-grotesk', sans-serif;
 }
 
 .ingredient-origins .detail-item {
@@ -117,6 +136,7 @@
 }
 
 .ingredient-origins .detail-label {
+  font-family: 'aktiv-grotesk', sans-serif;
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
@@ -126,17 +146,19 @@
 }
 
 .ingredient-origins .detail-value {
+  font-family: 'aktiv-grotesk', sans-serif;
   font-size: 14px;
   color: #333333;
   margin: 0;
   line-height: 1.5;
 }
 
-/* Purity List Styles */
+/* Purity List */
 .ingredient-origins .purity-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  font-family: 'aktiv-grotesk', sans-serif;
 }
 
 .ingredient-origins .purity-list li {
@@ -158,11 +180,12 @@
   font-size: 14px;
 }
 
-/* Allergen List Styles */
+/* Allergen List */
 .ingredient-origins .allergen-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  font-family: 'aktiv-grotesk', sans-serif;
 }
 
 .ingredient-origins .allergen-list li {
@@ -185,27 +208,52 @@
 }
 
 .ingredient-origins .allergen-text {
+  font-family: 'aktiv-grotesk', sans-serif;
   font-size: 14px;
   color: #666666;
   margin: 0;
   line-height: 1.6;
 }
 
-/* Trust Badge */
-/* Trust Badge — simple centered text under cards */
+/* Trust Badge — Moret for hero feel */
 .ingredient-origins .trust-badge {
-  background: rgba(55, 124, 16, 0.792);            /* remove background box */
-  color: #e9eef5;              /* matches your titles/buttons */
-  padding: 1rem 0 0 0;         /* gentle breathing room */
-  border-radius: 2;            /* no box */
+  font-family: 'moret', serif;
+  background-color: #6f8a62;
+  color: #e9eef5;
+  padding: 1.5rem 2rem;
+  border-radius: 0;
   text-align: center;
-  display: block;              /* normal text block */
+  display: block;
   font-weight: 600;
-  font-size: 1.05rem;          /* slightly emphasized but not too large */
-  margin-top: 1.5rem;          /* spacing under the cards */
-  box-shadow: none;   
-  border-color: #0f2340;
+  font-size: 1.05rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  box-shadow: none;
+  border: 9px;
+  position: relative;
+  z-index: 1;
+  margin-left: -20px;
+  margin-right: -20px;
+  width: calc(100% + 40px);
+}
 
+/* Gradient Transition */
+.ingredient-origins::after {
+  content: '';
+  display: block;
+  width: 100vw;
+  height: 100px;
+   background: linear-gradient(to bottom, 
+    #6f8a62 0%,      /* herbal green */
+    #879d76 25%,     /* softened sage green */
+    #b7c9a0 50%,     /* light herb-wheat transition */
+    #e8d9b7 75%,     /* soft wheat */
+    #f7ebd2 100%     /* full wheat */
+  );
+  margin-top: 0;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  position: relative;
 }
 
 .ingredient-origins .badge-icon {
@@ -213,16 +261,17 @@
 }
 
 .ingredient-origins .badge-text {
+  font-family: 'aktiv-grotesk', sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
   max-width: 700px;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
   .ingredient-origins {
-    padding: 40px 16px;
+    padding: 40px 16px 0;
   }
 
   .ingredient-origins .title {
@@ -250,5 +299,9 @@
 
   .ingredient-origins .badge-text {
     font-size: 13px;
+  }
+
+  .ingredient-origins::after {
+    height: 80px;
   }
 }

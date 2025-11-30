@@ -1,0 +1,82 @@
+/* ================================
+   A K T I V   G R O T E S K
+   ================================ */
+
+@font-face {
+  font-family: 'aktiv-grotesk';
+  src: url('/fonts/aktiv-grotesk/AktivGrotesk-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'aktiv-grotesk';
+  src: url('/fonts/aktiv-grotesk/AktivGrotesk-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'aktiv-grotesk';
+  src: url('/fonts/aktiv-grotesk/AktivGrotesk-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ================================
+   M O R E T
+   ================================ */
+
+@font-face {
+  font-family: 'moret';
+  src: url('/fonts/moret/Moret-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'moret';
+  src: url('/fonts/moret/Moret-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'moret';
+  src: url('/fonts/moret/Moret-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ================================
+   D E G U L A R   D I S P L A Y
+   ================================ */
+
+@font-face {
+  font-family: 'degular-display';
+  src: url('/fonts/degular-display/DegularDisplay-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'degular-display';
+  src: url('/fonts/degular-display/DegularDisplay-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'degular-display';
+  src: url('/fonts/degular-display/DegularDisplay-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}

@@ -169,35 +169,41 @@ return ( <div className="service-page">
   </header>
 
   {/* HOW IT WORKS */}
+  {/* HOW IT WORKS */}
   <section className="how-it-works">
     <h2>How it works</h2>
-    <div className="cards">{/* Add cards or steps here if needed */}</div>
-  </section>
-
-  {/* SCHEDULING */}
-  <section className="section-light scheduling-section">
-    <div className="container">
-      <div className="left">
-        <h2>Schedule your purchase</h2>
-        <p>Select a date and delivery option, or reserve in-store pickup.</p>
-        <div className="mini-card"><p><strong>Available:</strong> In stock — limited quantities</p></div>
-        <div className="actions-row">
-          <button className="btn primary" onClick={() => {
-            const today = new Date().toISOString().split('T')[0];
-            handleScheduleDate(today);
-            alert(`Selected date: ${today}`);
-          }}>Choose today</button>
-          <button className="btn ghost" onClick={() => {
-            const el = document.querySelector('.scheduling-section');
-            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }}>View availability</button>
-        </div>
+    <div className="cards">
+      <div className="step-card">
+        <div className="step-number">1</div>
+        <div className="step-icon">🌿</div>
+        <h3>Choose Your Blend</h3>
+        <p>Browse our curated collection of organic herbal teas and select the perfect blend for your wellness journey.</p>
       </div>
-      <div className="right">
-        <div className="visual" style={{ backgroundImage: `url('${scheduleImg}')` }} />
+
+      <div className="step-card">
+        <div className="step-number">2</div>
+        <div className="step-icon">📅</div>
+        <h3>Schedule Delivery</h3>
+        <p>Pick your preferred delivery date and time. We'll reserve your order and send you reminders.</p>
+      </div>
+
+      <div className="step-card">
+        <div className="step-number">3</div>
+        <div className="step-icon">🚚</div>
+        <h3>Receive & Enjoy</h3>
+        <p>Your fresh herbal blend arrives at your doorstep, ready to brew and savor at your convenience.</p>
+      </div>
+
+      <div className="step-card">
+        <div className="step-number">4</div>
+        <div className="step-icon">🔄</div>
+        <h3>Subscribe & Save</h3>
+        <p>Set up recurring deliveries to save 10% and never run out of your favorite teas.</p>
       </div>
     </div>
   </section>
+
+
 
   {/* Isolated Components */}
   <div style={isolationStyle}>
